@@ -40,7 +40,9 @@
                 };
 
                 $scope.deleteObject = function (object) {
-                    crudGridDataFactory($attrs.tableName).delete({ id: object.Id }, successCallback, errorCallback);
+                    if (confirm('Are you sure you want to delete?')){
+                        crudGridDataFactory($attrs.tableName).delete({ id: object.Id }, successCallback, errorCallback);
+                    }
                 };
 
                 $scope.updateObject = function (object) {
