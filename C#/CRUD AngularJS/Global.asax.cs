@@ -19,6 +19,8 @@ namespace AngularJS_WebApi_EF
         {
             AreaRegistration.RegisterAllAreas();
 
+            System.Data.Entity.Database.SetInitializer(
+                        new AngularJS_WebApi_EF.Models.SampleData());
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

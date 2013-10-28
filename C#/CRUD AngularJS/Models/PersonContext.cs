@@ -19,5 +19,6 @@ namespace AngularJS_WebApi_EF.Models
 
         public DbSet<Person> People { get; set; }
         public DbSet<Place> Places { get; set; }
+        public DbSet<Item> Item { get; set; }
     }
 }
