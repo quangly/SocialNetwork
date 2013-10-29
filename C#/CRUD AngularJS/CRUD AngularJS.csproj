@@ -145,13 +145,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Place.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonContext.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Models\SampleData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\Templates\home.html" />
     <Content Include="App_Data\PersonContext.mdf" />
     <Content Include="App_Data\PersonContext_log.ldf">
       <DependentUpon>PersonContext.mdf</DependentUpon>
@@ -252,13 +256,14 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\App\app.js" />
-    <Content Include="Scripts\App\Directives\Content\crud-grid-directive.css" />
-    <Content Include="Scripts\App\Directives\crud-grid-directive.js" />
-    <Content Include="Scripts\App\Directives\model-change-blur-directive.js" />
-    <Content Include="Scripts\App\Directives\Templates\crud-grid-directive-template.html" />
-    <Content Include="Scripts\App\Services\notification-factory.js" />
-    <Content Include="Scripts\App\Directives\Services\crud-grid-data-factory.js" />
+    <Content Include="App\index.html" />
+    <Content Include="App\app.js" />
+    <Content Include="App\Directives\Content\crud-grid-directive.css" />
+    <Content Include="App\Directives\crud-grid-directive.js" />
+    <Content Include="App\Directives\model-change-blur-directive.js" />
+    <Content Include="App\Templates\crud-grid-directive-template.html" />
+    <Content Include="App\Services\notification-factory.js" />
+    <Content Include="App\Services\crud-grid-data-factory.js" />
     <Content Include="Content\font\fontawesome-webfont.woff">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -286,6 +291,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\angularjs-webapi-crud-grid - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\angularjs-webapi-crud-grid - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
@@ -601,13 +607,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\toastr.min.js.map" />
   </ItemGroup>
   <ItemGroup />

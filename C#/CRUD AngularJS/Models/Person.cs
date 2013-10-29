@@ -8,9 +8,10 @@ namespace AngularJS_WebApi_EF.Models
 {
     public class Person
     {
-        [Key]
-       
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Email { get; set; }
+        public string Location { get; set; }
+        public List<Item> Items { get; set; }
     }
 }

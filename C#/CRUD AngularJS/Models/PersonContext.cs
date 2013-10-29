@@ -13,12 +13,37 @@ namespace AngularJS_WebApi_EF.Models
         // 
         // System.Data.Entity.Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseIfModelChanges<AngularJS_WebApi_EF.Models.PersonContext>());
 
-        public PersonContext() : base("name=PersonContext")
-        {
-        }
+        public PersonContext() : base("name=PersonContext") { }
+
 
         public DbSet<Person> People { get; set; }
         public DbSet<Place> Places { get; set; }
-        public DbSet<Item> Item { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Person>()
+                        .HasKey(x => x.Id)
+                        .HasMany(x => x.Items)
+                        .WithRequired(x => x.Person);
+
+            modelBuilder.Entity<Place>().HasKey(x => x.Id);
+
+            modelBuilder.Entity<Item>()
+                .HasKey(x => x.Id)
+                .HasMany(x=>x.Comments)
+                .WithRequired(x=>x.Item);
+
+            modelBuilder.Entity<Item>()
+                        .HasKey(x => x.Id)
+                        .HasRequired(x => x.Person);
+            
+            modelBuilder.Entity<Comment>()
+                .HasKey(x => x.Id)
+                .HasRequired(x=>x.Item);
+        }
     }
 }

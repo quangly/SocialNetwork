@@ -6,10 +6,14 @@ using System.Web;
 
 namespace AngularJS_WebApi_EF.Models
 {
-    public class Place
+    public class Comment
     {
 
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int PersonID { get; set; }
+        public string CommentText { get; set; }
+        public DateTime InsertDT { get; set; }
+
+        public Item Item { get; set; }
     }
 }

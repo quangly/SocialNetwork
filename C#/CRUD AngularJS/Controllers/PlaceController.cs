@@ -62,10 +62,13 @@ namespace AngularJS_WebApi_EF.Controllers
         }
 
         // POST api/Place
+        //public HttpResponseMessage PostPlace(string place, string city)
         public HttpResponseMessage PostPlace(Place place)
         {
             if (ModelState.IsValid)
             {
+                //Place placeToSave = new Place(){Name = place};
+
                 db.Places.Add(place);
                 db.SaveChanges();
 
