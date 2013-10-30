@@ -25,8 +25,7 @@ app.factory('appFactory', function ($http, $rootScope) {
                 method: 'POST',
                 url: '/api/Place/',
                 data: {
-                    place: location,
-                    city: city
+                    Name: location
                 }
             });
             return promise;
@@ -46,5 +45,5 @@ function HomeCtrl($scope, appFactory) {
         $scope.places = d.data;
     });
 
-    appFactory.createPlace("some new place","my city");
+    //appFactory.createPlace("some new place");
 }
