@@ -17,30 +17,33 @@ namespace AngularJS_WebApi_EF.Controllers
         private PersonContext db = new PersonContext();
 
         // GET api/Person
-        public IEnumerable<Person> GetPeople()
+        public IEnumerable<Object> GetPeople()
         {
-            return db.People.Include(x => x.Items).ToList()
-                .Select(x => new Person()
-                {
-                    Comments = x.Comments,
-                    Email = x.Email,
-                    Id = x.Id,
-                    Location = x.Location,
-                    Name = x.Name,
-                    PicUrl = x.PicUrl,
-                    Items = x.Items.Select(y => new Item()
-                        {
-                            Comments = y.Comments,
-                            Description = y.Description,
-                            Id = y.Id,
-                            Name = y.Name,
-                            PriceList = y.PriceList,
-                            PriceLSale = y.PriceLSale,
-                            Size = y.Size,
-                            Type = y.Size,
-                            Person = null
-                        }).ToList()
-                }).AsEnumerable();
+            var comments = db.Comments.ToList();
+            return db.People.Include(x => x.Items).OrderBy(x => x.Name).ToList()
+                     .Select(x => new
+                         {
+                             Email = x.Email,
+                             Id = x.Id,
+                             Location = x.Location,
+                             Name = x.Name,
+                             PicUrl = x.PicUrl,
+                             Items = x.Items.Select(y => new
+                                 {
+                                     Comments = comments.Where(z => z.Item == y).Select(z => new
+                                         {
+                                             CommentText = z.CommentText,
+                                             Name = z.Person.Name
+                                         }).ToList(),
+                                     Description = y.Description,
+                                     Id = y.Id,
+                                     Name = y.Name,
+                                     PriceList = y.PriceList,
+                                     PriceLSale = y.PriceLSale,
+                                     Size = y.Size,
+                                     Type = y.Size
+                                 }).ToList().Take(1)
+                         }).AsEnumerable();
         }
 
 

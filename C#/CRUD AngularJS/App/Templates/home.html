@@ -11,10 +11,14 @@
                       {{person.name}} <br />
                       <img ng-src="{{person.picUrl}}" height="150" width="150"/><br />
                       Email: {{person.email}} <br />
-                      From:  {{person.location}}
+                      From:  {{person.location}}<p></p>
                       <div ng-repeat ="item in person.items">
                           Item Name: {{item.name}} <br/>
-                          Description: {{item.description}}
+                          Description: {{item.description}}<p/>
+                          <div ng-repeat ="comment in item.comments">
+                              {{comment.name}} wrote {{comment.commentText}}
+                          </div>
+                          <p></p><p></p>
                       </div>
                       <hr />
                   </div>
