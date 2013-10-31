@@ -14,6 +14,7 @@ namespace AngularJS_WebApi_EF.Models
         public string Location { get; set; }
         public string PicUrl { get; set; }
         public List<Item> Items { get; set; }
+        public List<Comment> Comments { get; set; }
         
     }
 }

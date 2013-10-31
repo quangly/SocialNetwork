@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace AngularJS_WebApi_EF.Models
 {
-    public class SampleData : DropCreateDatabaseAlways<PersonContext>
+    public class SampleData : DropCreateDatabaseIfModelChanges<PersonContext>
     {
 
         protected override void Seed(PersonContext context)
@@ -42,11 +42,11 @@ namespace AngularJS_WebApi_EF.Models
 
             var comments = new List<Comment>
                 {
-                    new Comment { PersonID = people.Single(x => x.Email == "janedoe@gmail.com").Id,  CommentText = "This is crazy", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 1)},
-                    new Comment { PersonID = people.Single(x => x.Email == "jessicadoe@gmail.com").Id,  CommentText = "This is awesome", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 1)},
-                    new Comment { PersonID = people.Single(x => x.Email == "amydoe@gmail.com").Id,  CommentText = "This is hot", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 2)},
-                    new Comment { PersonID = people.Single(x => x.Email == "Christinadoe@gmail.com").Id,  CommentText = "I love this", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 3)},
-                    new Comment { PersonID = people.Single(x => x.Email == "Christinadoe@gmail.com").Id,  CommentText = "I want this!", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 4)}
+                    new Comment { Person = people.Single(x => x.Email == "janedoe@gmail.com"),  CommentText = "This is crazy", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 1)},
+                    new Comment { Person = people.Single(x => x.Email == "jessicadoe@gmail.com"),  CommentText = "This is awesome", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 1)},
+                    new Comment { Person = people.Single(x => x.Email == "amydoe@gmail.com"),  CommentText = "This is hot", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 2)},
+                    new Comment { Person = people.Single(x => x.Email == "Christinadoe@gmail.com"),  CommentText = "I love this", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 3)},
+                    new Comment { Person = people.Single(x => x.Email == "Christinadoe@gmail.com"),  CommentText = "I want this!", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 4)}
                 };
 
             comments.ForEach(a => context.Comments.Add(a));

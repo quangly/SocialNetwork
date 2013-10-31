@@ -30,6 +30,11 @@ namespace AngularJS_WebApi_EF.Models
                         .HasMany(x => x.Items)
                         .WithRequired(x => x.Person);
 
+            modelBuilder.Entity<Person>()
+
+                        .HasMany(x => x.Comments)
+                        .WithOptional(x => x.Person);
+
             modelBuilder.Entity<Place>().HasKey(x => x.Id);
 
             modelBuilder.Entity<Item>()
@@ -44,6 +49,10 @@ namespace AngularJS_WebApi_EF.Models
             modelBuilder.Entity<Comment>()
                 .HasKey(x => x.Id)
                 .HasRequired(x=>x.Item);
+
+            modelBuilder.Entity<Comment>()
+                .HasKey(x => x.Id)
+                .HasRequired(x => x.Person);
 
         }
     }

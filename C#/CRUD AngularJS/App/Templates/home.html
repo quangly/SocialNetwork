@@ -7,11 +7,15 @@
       <tbody>
           <tr>
               <td>
-                <div ng-repeat="person in people">
-                    <img src="{{person.PicUrl}}" height="50" width="50"/>
-                    {{person.Name}} <br />
-                    Email: {{person.Email}} <br />
-                    From:  {{person.Location}}
+                <div ng-repeat="person in people" style="float:left; margin-left: 20px;">
+                    <img ng-src="{{person.picUrl}}" height="50" width="50"/>
+                    {{person.name}} <br />
+                    Email: {{person.email}} <br />
+                    From:  {{person.location}}
+                    <div ng-repeat ="item in person.items">
+                        Item Name: {{item.name}} <br/>
+                        Description: {{item.description}}
+                    </div>
                     <hr />
                 </div>
               </td>
@@ -20,9 +24,9 @@
        </tbody>
 </table>
 
-Places: 
+<!--Places: 
 <div ng-repeat="place in places">
-    {{place.Name}}
+    {{place.name}}
 </div>
 <hr />
-
+-->

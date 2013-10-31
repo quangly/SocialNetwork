@@ -19,8 +19,31 @@ namespace AngularJS_WebApi_EF.Controllers
         // GET api/Person
         public IEnumerable<Person> GetPeople()
         {
-            return db.People.AsEnumerable();
+            return db.People.Include(x => x.Items).ToList()
+                .Select(x => new Person()
+                {
+                    Comments = x.Comments,
+                    Email = x.Email,
+                    Id = x.Id,
+                    Location = x.Location,
+                    Name = x.Name,
+                    PicUrl = x.PicUrl,
+                    Items = x.Items.Select(y => new Item()
+                        {
+                            Comments = y.Comments,
+                            Description = y.Description,
+                            Id = y.Id,
+                            Name = y.Name,
+                            PriceList = y.PriceList,
+                            PriceLSale = y.PriceLSale,
+                            Size = y.Size,
+                            Type = y.Size,
+                            Person = null
+                        }).ToList()
+                }).AsEnumerable();
         }
+
+
 
         // GET api/Person/5
         public Person GetPerson(int id)
