@@ -20,6 +20,15 @@ app.factory('appFactory', function ($http, $rootScope) {
             return promise;
         },
 
+        getPeople: function () {
+            var promise = $http({
+                method: 'GET',
+                url: '/api/person'
+            });
+            return promise;
+        },
+
+
         createPlace: function (location, city) {
             var promise = $http({
                 method: 'POST',
@@ -43,6 +52,10 @@ function HomeCtrl($scope, appFactory) {
 
     appFactory.getPlaces().then(function (d) {
         $scope.places = d.data;
+    });
+
+    appFactory.getPeople().then(function (d) {
+        $scope.people = d.data;
     });
 
     //appFactory.createPlace("some new place");

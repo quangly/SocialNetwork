@@ -1,9 +1,19 @@
-﻿Hello {{name}}!
-<div crud-grid table-name='person'></div>
-<div crud-grid table-name='place'></div>
+﻿<div ng-show="false">Hello {{name}}! </div>
+<div crud-grid table-name='person' ng-show="false"></div>
+<div crud-grid table-name='place'  ng-show="false"></div>
 
-My Stuff
 
+<div ng-repeat="person in people">
+    {{person.Name}} <br />
+    Email: {{person.Email}} <br />
+    From:  {{person.Location}}
+    <hr />
+</div>
+
+<p></p>
+Places: 
 <div ng-repeat="place in places">
     {{place.Name}}
 </div>
+<hr />
+
