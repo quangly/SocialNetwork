@@ -3,15 +3,23 @@
 <div crud-grid table-name='place'  ng-show="false"></div>
 
 
-<div ng-repeat="person in people">
-    <img src="{{person.PicUrl}}" height="50" width="50"/>
-    {{person.Name}} <br />
-    Email: {{person.Email}} <br />
-    From:  {{person.Location}}
-    <hr />
-</div>
+ <table class="table">
+      <tbody>
+          <tr>
+              <td>
+                <div ng-repeat="person in people">
+                    <img src="{{person.PicUrl}}" height="50" width="50"/>
+                    {{person.Name}} <br />
+                    Email: {{person.Email}} <br />
+                    From:  {{person.Location}}
+                    <hr />
+                </div>
+              </td>
+          </tr>
 
-<p></p>
+       </tbody>
+</table>
+
 Places: 
 <div ng-repeat="place in places">
     {{place.Name}}
