@@ -40,10 +40,11 @@ namespace AngularJS_WebApi_EF.Models
             modelBuilder.Entity<Item>()
                         .HasKey(x => x.Id)
                         .HasRequired(x => x.Person);
-            
+
             modelBuilder.Entity<Comment>()
                 .HasKey(x => x.Id)
                 .HasRequired(x=>x.Item);
+
         }
     }
 }

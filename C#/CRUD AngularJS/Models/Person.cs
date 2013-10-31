@@ -13,5 +13,6 @@ namespace AngularJS_WebApi_EF.Models
         public string Email { get; set; }
         public string Location { get; set; }
         public List<Item> Items { get; set; }
+        
     }
 }

@@ -15,5 +15,6 @@ namespace AngularJS_WebApi_EF.Models
         public DateTime InsertDT { get; set; }
 
         public Item Item { get; set; }
+        //public Person Person { get; set; }
     }
 }
