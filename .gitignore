@@ -19,13 +19,16 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
+*.dll
 *.cache
 */[Bb]in
 [Dd]ebug*/
 *.lib
 *.suo
 *.sbr
-*/obj/
+App_Data
+bin
+obj
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
