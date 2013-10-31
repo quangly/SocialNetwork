@@ -10,10 +10,11 @@ namespace AngularJS_WebApi_EF.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Type { get; set; }
         public string Description { get; set; }
-        public decimal Size { get; set; }
-        public decimal PriceList { get; set; }
-        public decimal PriceLSale { get; set; }
+        public string Size { get; set; }
+        public int PriceList { get; set; }
+        public int PriceLSale { get; set; }
         public List<Comment> Comments { get; set; }
         public Person Person { get; set; }
     }
