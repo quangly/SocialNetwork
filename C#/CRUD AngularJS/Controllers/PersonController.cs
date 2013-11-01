@@ -34,7 +34,7 @@ namespace AngularJS_WebApi_EF.Controllers
                                          {
                                              CommentText = z.CommentText,
                                              Name = z.Person.Name
-                                         }).ToList(),
+                                         }).ToList().Take(1),
                                      Description = y.Description,
                                      Id = y.Id,
                                      Name = y.Name,
