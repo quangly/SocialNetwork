@@ -15,10 +15,10 @@ namespace AngularJS_WebApi_EF.Models
             //base.Seed(context);
             var people = new List<Person>
                 {
-                    new Person {Name = "Jane", Email = "janedoe@gmail.com", Location= "Philadelphia", PicUrl="/Content/photos/person/jane.jpg"},
-                    new Person {Name = "Jessica", Email = "jessicadoe@gmail.com", Location= "Los Angelas", PicUrl="/Content/photos/person/jessica.jpg"},
-                    new Person {Name = "Amy", Email = "amydoe@gmail.com", Location= "NYC", PicUrl="/Content/photos/person/amy.jpg"},
-                    new Person {Name = "Christina", Email = "Christinadoe@gmail.com", Location= "Miami",PicUrl="/Content/photos/person/christina.jpg"}
+                    new Person {UserName = "jane123", Name = "Jane", Email = "janedoe@gmail.com", Location= "Philadelphia", PicUrl="/Content/photos/person/jane.jpg"},
+                    new Person {UserName = "jessica123", Name = "Jessica", Email = "jessicadoe@gmail.com", Location= "Los Angelas", PicUrl="/Content/photos/person/jessica.jpg"},
+                    new Person {UserName = "amy123",  Name ="Amy", Email = "amydoe@gmail.com", Location= "NYC", PicUrl="/Content/photos/person/amy.jpg"},
+                    new Person {UserName = "christina123", Name = "Christina", Email = "Christinadoe@gmail.com", Location= "Miami",PicUrl="/Content/photos/person/christina.jpg"}
                 };
 
             people.ForEach(a => context.People.Add(a));
