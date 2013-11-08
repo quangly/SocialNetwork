@@ -15,7 +15,6 @@ namespace AngularJS_WebApi_EF.Models
 
         public PersonContext() : base("name=PersonContext") { }
 
-
         public DbSet<Person> People { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Item> Items { get; set; }
@@ -31,7 +30,6 @@ namespace AngularJS_WebApi_EF.Models
                         .WithRequired(x => x.Person);
 
             modelBuilder.Entity<Person>()
-
                         .HasMany(x => x.Comments)
                         .WithOptional(x => x.Person);
 

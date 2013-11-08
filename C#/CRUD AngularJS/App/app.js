@@ -6,6 +6,10 @@ app.config(['$routeProvider', function ($routeProvider) {
         when('/', {
             templateUrl: 'Templates/home.html',
             controller: 'HomeCtrl'
+        })
+        .when('/profile', {
+            templateUrl: 'Templates/profile.html',
+            controller: 'ProfileCtrl'
         });
 }]);
 
@@ -23,11 +27,18 @@ app.factory('appFactory', function ($http, $rootScope) {
         getPeople: function () {
             var promise = $http({
                 method: 'GET',
-                url: '/api/person'
+                url: '/api/people'
             });
             return promise;
         },
 
+        getPerson: function (username) {
+            var promise = $http({
+                method: 'GET',
+                url: '/api/people/person?username=' + username,
+            });
+            return promise;
+        },
 
         createPlace: function (location, city) {
             var promise = $http({
@@ -45,7 +56,7 @@ app.factory('appFactory', function ($http, $rootScope) {
 });
 
 
-function HomeCtrl($scope, appFactory) {
+function HomeCtrl($scope, appFactory, $location) {
     $scope.name = "Quang";
 
     $scope.places = [];
@@ -58,5 +69,18 @@ function HomeCtrl($scope, appFactory) {
         $scope.people = d.data;
     });
 
+    $scope.loadProfile = function(person) {
+        $location.url('/profile?username=' + person.userName);
+    };
+}
+
+
+
+
+function ProfileCtrl($scope, appFactory, $routeParams) {
+    var username = $routeParams.username;
+    appFactory.getPerson(username).then(function (d) {
+        $scope.person = d.data;
+    });
     //appFactory.createPlace("some new place");
 }

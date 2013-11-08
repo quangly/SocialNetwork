@@ -9,7 +9,7 @@
               <td>
                   <div ng-repeat="person in people" style="float:left; margin-left: 20px;">
                       {{person.name}} <br />
-                      <img ng-src="{{person.picUrl}}" height="150" width="150"/><br />
+                      <img ng-src="{{person.picUrl}}" height="150" width="150" ng-click="loadProfile(person)"/><br />
                       Email: {{person.email}} <br />
                       From:  {{person.location}}<p></p>
                       <div ng-repeat ="item in person.items">

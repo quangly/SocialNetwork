@@ -16,7 +16,7 @@ namespace AngularJS_WebApi_EF.Controllers
     {
         private PersonContext db = new PersonContext();
 
-        // GET api/Person
+        [HttpGet]
         public IEnumerable<Object> GetPeople()
         {
             var comments = db.Comments.ToList();
@@ -27,6 +27,7 @@ namespace AngularJS_WebApi_EF.Controllers
                              Id = x.Id,
                              Location = x.Location,
                              Name = x.Name,
+                             UserName = x.UserName,
                              PicUrl = x.PicUrl,
                              Items = x.Items.Select(y => new
                                  {
@@ -46,7 +47,18 @@ namespace AngularJS_WebApi_EF.Controllers
                          }).AsEnumerable();
         }
 
+        [HttpGet]
+        public object GetUser(string username)
+        {
+            var person =
+                GetPeople().FirstOrDefault(x => x.GetType().GetProperty("UserName").GetValue(x, null).ToString() == username);
+            if (person == null)
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+            }
 
+            return person;            
+        }
 
         // GET api/Person/5
         public Person GetPerson(int id)
