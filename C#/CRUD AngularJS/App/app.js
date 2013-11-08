@@ -16,14 +16,6 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.factory('appFactory', function ($http, $rootScope) {
     var service = {
-        getPlaces: function() {
-            var promise = $http({
-                method: 'GET',
-                url: '/api/place'
-            });
-            return promise;
-        },
-
         getPeople: function () {
             var promise = $http({
                 method: 'GET',
@@ -40,16 +32,16 @@ app.factory('appFactory', function ($http, $rootScope) {
             return promise;
         },
 
-        createPlace: function (location, city) {
-            var promise = $http({
-                method: 'POST',
-                url: '/api/Place/',
-                data: {
-                    Name: location
-                }
-            });
-            return promise;
-        }
+        //createPlace: function (location, city) {
+        //    var promise = $http({
+        //        method: 'POST',
+        //        url: '/api/Place/',
+        //        data: {
+        //            Name: location
+        //        }
+        //    });
+        //    return promise;
+        //}
     };
 
     return service;
@@ -61,10 +53,6 @@ function HomeCtrl($scope, appFactory, $location) {
 
     $scope.places = [];
 
-    appFactory.getPlaces().then(function (d) {
-        $scope.places = d.data;
-    });
-
     appFactory.getPeople().then(function (d) {
         $scope.people = d.data;
     });
@@ -75,12 +63,10 @@ function HomeCtrl($scope, appFactory, $location) {
 }
 
 
-
-
 function ProfileCtrl($scope, appFactory, $routeParams) {
     var username = $routeParams.username;
     appFactory.getPerson(username).then(function (d) {
         $scope.person = d.data;
     });
-    //appFactory.createPlace("some new place");
+
 }
