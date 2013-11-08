@@ -38,3 +38,4 @@ C:\Dev\Crud\C#\CRUD AngularJS\bin\System.Web.WebPages.Razor.xml
 C:\Dev\Crud\C#\CRUD AngularJS\obj\Debug\CRUD AngularJS.csprojResolveAssemblyReference.cache
 C:\Dev\Crud\C#\CRUD AngularJS\obj\Debug\AngularJS-WebApi-EF.dll
 C:\Dev\Crud\C#\CRUD AngularJS\obj\Debug\AngularJS-WebApi-EF.pdb
+C:\DEV\CRUD\C#\CRUD AngularJS\bin\Antlr3.Runtime.pdb

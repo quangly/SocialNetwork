@@ -54,7 +54,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\Templates\home.html" />
+    <Content Include="App\Templates\profile.html" />
     <Content Include="App_Data\PersonContext.mdf" />
     <Content Include="App_Data\PersonContext_log.ldf">
       <DependentUpon>PersonContext.mdf</DependentUpon>
@@ -292,6 +293,7 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Properties\PublishProfiles\angularjs-webapi-crud-grid - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\angularjs-webapi-crud-grid - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
