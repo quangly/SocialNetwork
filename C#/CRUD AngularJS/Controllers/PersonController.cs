@@ -44,7 +44,7 @@ namespace AngularJS_WebApi_EF.Controllers
                                      Size = y.Size,
                                      Type = y.Size,
                                      PicUrl = y.PicUrl
-                                 }).ToList().Take(1)
+                                 }).ToList()//.Take(1)
                          }).AsEnumerable();
         }
 
