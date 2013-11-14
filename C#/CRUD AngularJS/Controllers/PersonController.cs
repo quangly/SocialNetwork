@@ -42,7 +42,8 @@ namespace AngularJS_WebApi_EF.Controllers
                                      PriceList = y.PriceList,
                                      PriceLSale = y.PriceLSale,
                                      Size = y.Size,
-                                     Type = y.Size
+                                     Type = y.Size,
+                                     PicUrl = y.PicUrl
                                  }).ToList().Take(1)
                          }).AsEnumerable();
         }
