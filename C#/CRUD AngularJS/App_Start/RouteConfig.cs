@@ -11,6 +11,7 @@ namespace AngularJS_WebApi_EF
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            //MVC View Engine
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
