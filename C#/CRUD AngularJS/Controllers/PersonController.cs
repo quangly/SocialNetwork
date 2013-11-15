@@ -61,6 +61,20 @@ namespace AngularJS_WebApi_EF.Controllers
             return person;            
         }
 
+        [HttpGet]
+        public object Search(string search)
+        {
+            var person =
+                 GetPeople().Where(x => x.GetType().GetProperty("UserName").GetValue(x, null).ToString().Contains(search));
+            if (person == null)
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+            }
+
+            return person;
+        }
+
+
         // GET api/Person/5
         public Person GetPerson(int id)
         {

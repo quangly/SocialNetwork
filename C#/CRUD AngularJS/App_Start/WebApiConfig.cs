@@ -31,6 +31,14 @@ namespace AngularJS_WebApi_EF
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
                 );
 
+            config.Routes.MapHttpRoute(
+                name: "api-search",
+                routeTemplate: "api/people/search",
+                defaults: new { controller = "Person", action = "Search" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
+                );
+
+
         }
     }
 }
