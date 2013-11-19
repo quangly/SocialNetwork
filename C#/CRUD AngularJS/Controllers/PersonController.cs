@@ -62,10 +62,10 @@ namespace AngularJS_WebApi_EF.Controllers
         }
 
         [HttpGet]
-        public object Search(string search)
+        public object Search(string username)
         {
-            var person =
-                 GetPeople().Where(x => x.GetType().GetProperty("UserName").GetValue(x, null).ToString().Contains(search));
+
+            var person = (!String.IsNullOrEmpty(username) && username != "undefined") ? GetPeople().Where(x => x.GetType().GetProperty("UserName").GetValue(x, null).ToString().Contains(username)) : GetPeople();
             if (person == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));

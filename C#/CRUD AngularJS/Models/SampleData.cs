@@ -19,7 +19,8 @@ namespace AngularJS_WebApi_EF.Models
                     new Person {UserName = "jane123", Name = "Jane", Email = "janedoe@gmail.com", Location= "Philadelphia", PicUrl="/Content/photos/person/jane.jpg"},
                     new Person {UserName = "jessica123", Name = "Jessica", Email = "jessicadoe@gmail.com", Location= "Los Angelas", PicUrl="/Content/photos/person/jessica.jpg"},
                     new Person {UserName = "amy123",  Name ="Amy", Email = "amydoe@gmail.com", Location= "NYC", PicUrl="/Content/photos/person/amy.jpg"},
-                    new Person {UserName = "christina123", Name = "Christina", Email = "Christinadoe@gmail.com", Location= "Miami",PicUrl="/Content/photos/person/christina.jpg"}
+                    new Person {UserName = "christina123", Name = "Christina", Email = "Christinadoe@gmail.com", Location= "Miami",PicUrl="/Content/photos/person/christina.jpg"},
+                    new Person {UserName = "deltadreams", Name = "Quang", Email = "quangdly@gmail.com", Location= "Miami",PicUrl="/Content/photos/person/quang.jpg"}
                 };
 
             people.ForEach(a => context.People.Add(a));
@@ -36,7 +37,9 @@ namespace AngularJS_WebApi_EF.Models
                     new Item {Name = "My fav shoes", Type = "boots", PicUrl="/Content/photos/items/6.jpg",Description = "boots", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "Christinadoe@gmail.com")},
                     new Item {Name = "My stilettos", Type = "dress",PicUrl="/Content/photos/items/7.jpg",  Description = "dangerous shoes", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "Christinadoe@gmail.com")},
                     new Item {Name = "Red rain jacket", Type = "dress",PicUrl="/Content/photos/items/8.jpg",  Description = "", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
-                    new Item {Name = "Blue shirt", Type = "dress",PicUrl="/Content/photos/items/9.jpg",  Description = "casual fit", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")}
+                    new Item {Name = "Blue shirt", Type = "dress",PicUrl="/Content/photos/items/9.jpg",  Description = "casual fit", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
+                    new Item {Name = "Golden slippers", Type = "shoes",PicUrl="/Content/photos/items/10.jpg",  Description = "casual fit", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
+                    new Item {Name = "turntable", Type = "turntable",PicUrl="/Content/photos/items/11.jpg",  Description = "turn table", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "quangdly@gmail.com")}
                 };
 
             items.ForEach(a => context.Items.Add(a));

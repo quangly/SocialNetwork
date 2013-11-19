@@ -10,7 +10,12 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/profile', {
             templateUrl: 'Templates/profile.html',
             controller: 'ProfileCtrl'
-        });
+        })
+        .when('/search', {
+        templateUrl: 'Templates/results.html',
+        controller: 'SearchCtrl'
+    });    
+
 }]);
 
 
@@ -28,6 +33,14 @@ app.factory('appFactory', function ($http, $rootScope) {
             var promise = $http({
                 method: 'GET',
                 url: '/api/people/person?username=' + username,
+            });
+            return promise;
+        },
+        
+        getSearch: function (username) {
+            var promise = $http({
+                method: 'GET',
+                url: '/api/people/search?username=' + username,
             });
             return promise;
         },
@@ -60,6 +73,15 @@ function HomeCtrl($scope, appFactory, $location) {
     $scope.loadProfile = function(person) {
         $location.url('/profile?username=' + person.userName);
     };
+
+}
+
+
+function MainCtrl($scope, appFactory, $routeParams, $location) {
+    $scope.search = function (username) {
+        $location.url('/search?username=' + username);
+    };
+
 }
 
 
@@ -67,6 +89,18 @@ function ProfileCtrl($scope, appFactory, $routeParams) {
     var username = $routeParams.username;
     appFactory.getPerson(username).then(function (d) {
         $scope.person = d.data;
+    });
+
+}
+
+function SearchCtrl($scope, appFactory, $routeParams, $location) {
+    $scope.loadProfile = function (person) {
+        $location.url('/profile?username=' + person.userName);
+    };
+    
+    var username = $routeParams.username;
+    appFactory.getSearch(username).then(function (d) {
+        $scope.people = d.data;
     });
 
 }

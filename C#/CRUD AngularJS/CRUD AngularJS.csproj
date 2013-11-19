@@ -157,6 +157,7 @@
   <ItemGroup>
     <Content Include="App\Templates\home.html" />
     <Content Include="App\Templates\profile.html" />
+    <Content Include="App\Templates\results.html" />
     <Content Include="App_Data\PersonContext.mdf" />
     <Content Include="App_Data\PersonContext_log.ldf">
       <DependentUpon>PersonContext.mdf</DependentUpon>
