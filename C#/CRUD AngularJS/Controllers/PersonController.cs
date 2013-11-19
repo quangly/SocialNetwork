@@ -34,7 +34,9 @@ namespace AngularJS_WebApi_EF.Controllers
                                      Comments = comments.Where(z => z.Item == y).Select(z => new
                                          {
                                              CommentText = z.CommentText,
-                                             Name = z.Person.Name
+                                             Name = z.Person.Name,
+                                             UserName = z.Person.UserName,
+                                             PicUrl = z.Person.PicUrl
                                          }).ToList().Take(1),
                                      Description = y.Description,
                                      Id = y.Id,

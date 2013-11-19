@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace AngularJS_WebApi_EF.Models
 {
-    public class SampleData : DropCreateDatabaseIfModelChanges<PersonContext>
+    public class SampleData : DropCreateDatabaseAlways<PersonContext>
     {
 
         protected override void Seed(PersonContext context)
@@ -48,11 +48,12 @@ namespace AngularJS_WebApi_EF.Models
 
             var comments = new List<Comment>
                 {
-                    new Comment { Person = people.Single(x => x.Email == "janedoe@gmail.com"),  CommentText = "This is crazy", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 1)},
+                    new Comment { Person = people.Single(x => x.Email == "quangdly@gmail.com"),  CommentText = "Very musical", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 1)},
                     new Comment { Person = people.Single(x => x.Email == "jessicadoe@gmail.com"),  CommentText = "This is awesome", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 1)},
                     new Comment { Person = people.Single(x => x.Email == "amydoe@gmail.com"),  CommentText = "This is hot", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 2)},
                     new Comment { Person = people.Single(x => x.Email == "Christinadoe@gmail.com"),  CommentText = "I love this", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 3)},
-                    new Comment { Person = people.Single(x => x.Email == "Christinadoe@gmail.com"),  CommentText = "I want this!", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 4)}
+                    new Comment { Person = people.Single(x => x.Email == "Christinadoe@gmail.com"),  CommentText = "I want this!", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 4)},
+                    new Comment { Person = people.Single(x => x.Email == "janedoe@gmail.com"),  CommentText = "Cool do you DJ?", InsertDT = DateTime.Now, Item = items.Single(x=> x.Id == 11)},
                 };
 
             comments.ForEach(a => context.Comments.Add(a));

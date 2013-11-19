@@ -10,15 +10,17 @@
     </div>
     <div style="float: right; margin-left: 100px;">
         <div ng-repeat="item in person.items">
-            <img ng-src="{{item.picUrl}}" /><br />
-            Item Name: {{item.name}}
+            <img ng-src="{{item.picUrl}}" /><br/> Item Name: {{item.name}}
             <br />
             Description: {{item.description}}<p />
             <div ng-repeat="comment in item.comments">
-                {{comment.name}} wrote {{comment.commentText}}
+                <p ng-click="loadProfile(comment.userName)">
+                    <img ng-src="{{comment.picUrl}}" height="50" width="50"  /> {{comment.name}} wrote {{comment.commentText}} 
+                </p> 
             </div>
             <p></p>
             <p></p>
+                <div style="clear:both"></div>
         </div>
     </div>
     <hr />
