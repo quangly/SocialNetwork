@@ -44,6 +44,19 @@ app.factory('appFactory', function ($http, $rootScope) {
             });
             return promise;
         },
+        
+        addComment: function (itemid, commenttext, username) {
+            var promise = $http({
+                method: 'POST',
+                url: '/api/people/comment',
+                data: {
+                    itemId: itemid,
+                    commentText: commenttext,
+                    userName: username
+                }
+            });
+            return promise;
+        }
 
         //createPlace: function (location, city) {
         //    var promise = $http({
@@ -81,7 +94,6 @@ function MainCtrl($scope, appFactory, $routeParams, $location) {
     $scope.search = function (username) {
         $location.url('/search?username=' + username);
     };
-
 }
 
 
@@ -89,10 +101,24 @@ function ProfileCtrl($scope, appFactory, $routeParams, $location) {
     $scope.loadProfile = function (userName) {
         $location.url('/profile?username=' + userName);
     };
+    
     var username = $routeParams.username;
+    //var itemid = $routeParams.itemid;
+    //var commenttext = $routeParams.commenttext;
+    //console.log('itemid ' + itemid);
+    //console.log('comment ' + commenttext);
+
+    $scope.addComment = function(itemid, commenttext, username) {
+        appFactory.addComment(itemid, commenttext, username).then(function(d) {
+            $scope.person = d.data;
+        });
+    };
+    
     appFactory.getPerson(username).then(function (d) {
         $scope.person = d.data;
     });
+
+
 
 }
 

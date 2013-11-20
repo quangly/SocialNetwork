@@ -38,6 +38,12 @@ namespace AngularJS_WebApi_EF
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
                 );
 
+            config.Routes.MapHttpRoute(
+                name: "api-comment",
+                routeTemplate: "api/people/comment",
+                defaults: new { controller = "Person", action = "PostComment" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+                );
 
         }
     }

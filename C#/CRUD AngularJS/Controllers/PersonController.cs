@@ -31,13 +31,13 @@ namespace AngularJS_WebApi_EF.Controllers
                              PicUrl = x.PicUrl,
                              Items = x.Items.Select(y => new
                                  {
-                                     Comments = comments.Where(z => z.Item == y).Select(z => new
+                                     Comments = comments.Where(z => z.Item == y).OrderBy(z =>z.InsertDT).Select(z => new
                                          {
                                              CommentText = z.CommentText,
                                              Name = z.Person.Name,
                                              UserName = z.Person.UserName,
                                              PicUrl = z.Person.PicUrl
-                                         }).ToList().Take(1),
+                                         }).ToList(),//.Take(1)
                                      Description = y.Description,
                                      Id = y.Id,
                                      Name = y.Name,
@@ -77,6 +77,30 @@ namespace AngularJS_WebApi_EF.Controllers
         }
 
 
+        [HttpPost]
+        public int PostComment(CommentPost commentPost)
+        {
+            if (!String.IsNullOrEmpty(commentPost.commentText) && !string.IsNullOrEmpty(commentPost.userName))
+            {
+
+                Comment comment = new Comment();
+                comment.CommentText = commentPost.commentText;
+                comment.Item = db.Items.FirstOrDefault(x => x.Id == commentPost.itemId);
+                comment.Person = db.People.FirstOrDefault(x => x.UserName == commentPost.userName);
+                comment.InsertDT = DateTime.Now;
+
+                db.Comments.Add(comment);
+                db.SaveChanges();
+
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        
         // GET api/Person/5
         public Person GetPerson(int id)
         {

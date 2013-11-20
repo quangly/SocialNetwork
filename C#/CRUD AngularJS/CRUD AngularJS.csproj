@@ -146,6 +146,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CommentPost.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Place.cs" />
     <Compile Include="Models\Person.cs" />
