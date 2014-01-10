@@ -97,7 +97,7 @@ function MainCtrl($scope, appFactory, $routeParams, $location) {
 }
 
 
-function ProfileCtrl($scope, appFactory, $routeParams, $location) {
+function ProfileCtrl($scope, appFactory, $routeParams, $location, $route) {
     $scope.loadProfile = function (userName) {
         $location.url('/profile?username=' + userName);
     };
@@ -110,7 +110,8 @@ function ProfileCtrl($scope, appFactory, $routeParams, $location) {
 
     $scope.addComment = function(itemid, commenttext, username) {
         appFactory.addComment(itemid, commenttext, username).then(function(d) {
-            $scope.person = d.data;
+            console.log(d.data);
+            $route.reload();
         });
     };
     

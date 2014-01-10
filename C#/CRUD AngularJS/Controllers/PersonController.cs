@@ -31,7 +31,7 @@ namespace AngularJS_WebApi_EF.Controllers
                              PicUrl = x.PicUrl,
                              Items = x.Items.Select(y => new
                                  {
-                                     Comments = comments.Where(z => z.Item == y).OrderBy(z =>z.InsertDT).Select(z => new
+                                     Comments = comments.Where(z => z.Item == y).OrderByDescending(z =>z.InsertDT).Select(z => new
                                          {
                                              CommentText = z.CommentText,
                                              Name = z.Person.Name,
@@ -78,7 +78,7 @@ namespace AngularJS_WebApi_EF.Controllers
 
 
         [HttpPost]
-        public int PostComment(CommentPost commentPost)
+        public object PostComment(CommentPost commentPost)
         {
             if (!String.IsNullOrEmpty(commentPost.commentText) && !string.IsNullOrEmpty(commentPost.userName))
             {
@@ -92,11 +92,11 @@ namespace AngularJS_WebApi_EF.Controllers
                 db.Comments.Add(comment);
                 db.SaveChanges();
 
-                return 1;
+                return new {Success = true};
             }
             else
             {
-                return 0;
+                return new { Success = false, Message="XX" };
             }
         }
 
