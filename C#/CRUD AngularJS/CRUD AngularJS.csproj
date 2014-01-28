@@ -152,6 +152,7 @@
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Models\SampleData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\Templates\home.html" />
