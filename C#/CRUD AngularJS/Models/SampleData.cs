@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace AngularJS_WebApi_EF.Models
 {
-    public class SampleData : DropCreateDatabaseAlways<PersonContext>
+    public class SampleData : DropCreateDatabaseIfModelChanges<PersonContext>
     {
 
         protected override void Seed(PersonContext context)
