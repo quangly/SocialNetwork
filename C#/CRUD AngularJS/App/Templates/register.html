@@ -1,5 +1,16 @@
 ﻿<div style="float: left; margin-left: 20px;">
 
-    REGISTER
+    <div style="float: left; margin-left: 10px;">
+        
+        Username  <input type="text" id="txtUserName" size="25" ng-model="userName"/>{{userName}} 
+        <p></p>
+        Name <input type="text" id="txtName" size="25" ng-model="name"/>{{name}} 
+        <p></p>
+        Email <input type="text" id="txtEmail" size="25" ng-model="email"/>{{email}} 
+        <p></p>
+        Location <input type="text" id="txtLocation" size="25" ng-model="location"/>{{location}} 
+        <p></p>
+        <button type="button" class="btn btn-default" ng-click="search(searchText)">Submit</button>
+    </div>
     
 </div>
