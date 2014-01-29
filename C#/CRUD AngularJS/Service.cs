@@ -77,5 +77,28 @@ namespace AngularJS_WebApi_EF
             }            
         }
 
+        public object Register(Register register)
+        {
+            if (!String.IsNullOrEmpty(register.userName) && !string.IsNullOrEmpty(register.name))
+            {
+
+                Person person = new Person();
+                person.UserName = register.userName;
+                person.Name = register.name;
+                person.Email= register.email;
+                person.Location = register.location;
+                person.PicUrl = register.picUrl;
+               
+                db.People.Add(person);
+                db.SaveChanges();
+
+                return new { Success = true, Message = "Register successful." };
+            }
+            else
+            {
+                return new { Success = false, Message = "Register failed" };
+            }
+        }
+
     }
 }

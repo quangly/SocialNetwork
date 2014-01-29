@@ -45,6 +45,13 @@ namespace AngularJS_WebApi_EF
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
                 );
 
+            config.Routes.MapHttpRoute(
+                name: "api-register",
+                routeTemplate: "api/people/register",
+                defaults: new { controller = "Person", action = "Register" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+                );
+
         }
     }
 }

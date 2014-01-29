@@ -60,7 +60,24 @@ app.factory('appFactory', function ($http, $rootScope) {
                 }
             });
             return promise;
+        },
+        
+        register: function (userName, name, email, location, picUrl) {
+            var promise = $http({
+                method: 'POST',
+                url: '/api/people/register',
+                data: {
+                    userName: userName,
+                    name: name,
+                    email: email,
+                    location: location,
+                    picUrl: picUrl
+                }
+            });
+            return promise;
         }
+        
+
 
         //createPlace: function (location, city) {
         //    var promise = $http({
@@ -101,6 +118,15 @@ function MainCtrl($scope, appFactory, $routeParams, $location) {
 
     $scope.register = function() {
         $location.url('/register');
+    };
+
+    $scope.registerSubmit = function (userName, name, email, location, picUrl) {
+        console.log(userName);
+        console.log(name);
+        appFactory.register(userName, name, email, location, picUrl).then(function (d) {
+            console.log(d.data);
+            $location.url('/profile?username=' + userName);
+        });
     };
 
 }

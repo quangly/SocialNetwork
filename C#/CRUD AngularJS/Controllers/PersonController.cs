@@ -55,6 +55,14 @@ namespace AngularJS_WebApi_EF.Controllers
 
         }
 
+        [HttpPost]
+        public object Register(Register register)
+        {
+            var message = svc.Register(register);
+            return message;
+
+        }
+
         
         // GET api/Person/5
         public Person GetPerson(int id)
