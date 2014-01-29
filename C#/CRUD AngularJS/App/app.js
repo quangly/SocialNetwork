@@ -14,6 +14,10 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/search', {
         templateUrl: 'Templates/results.html',
         controller: 'SearchCtrl'
+        })
+        .when('/register', {
+            templateUrl: 'Templates/register.html',
+            controller: 'MainCtrl'
     });    
 
 }]);
@@ -94,6 +98,11 @@ function MainCtrl($scope, appFactory, $routeParams, $location) {
     $scope.search = function (username) {
         $location.url('/search?username=' + username);
     };
+
+    $scope.register = function() {
+        $location.url('/register');
+    };
+
 }
 
 
