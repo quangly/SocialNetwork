@@ -14,7 +14,7 @@ namespace AngularJS_WebApi_EF.Models
         public string Description { get; set; }
         public string Size { get; set; }
         public int PriceList { get; set; }
-        public int PriceLSale { get; set; }
+        public int PriceSale { get; set; }
         public string PicUrl { get; set; }
         public List<Comment> Comments { get; set; }
         public Person Person { get; set; }

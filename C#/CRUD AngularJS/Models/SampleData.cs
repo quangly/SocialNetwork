@@ -29,17 +29,17 @@ namespace AngularJS_WebApi_EF.Models
 
             var items = new List<Item>
                 {
-                    new Item {Name = "Purple", Type = "shoe", PicUrl="/Content/photos/items/1.jpg", Description = "high fashion", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "janedoe@gmail.com")},
-                    new Item {Name = "Cute Red", Type = "shoe", PicUrl="/Content/photos/items/2.jpg",Description = "my favorite", Size = "15", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "janedoe@gmail.com")},
-                    new Item {Name = "Red Pumps", Type = "pumps", PicUrl="/Content/photos/items/3.jpg",Description = "jaw droppers", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "jessicadoe@gmail.com")},
-                    new Item {Name = "Sexy Dress", Type = "sneakers",PicUrl="/Content/photos/items/4.jpg", Description = "late night comfort", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "jessicadoe@gmail.com")},
-                    new Item {Name = "Striped Shirt", Type = "sneakers", PicUrl="/Content/photos/items/5.jpg",Description = "hiptser  ouitfit", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
-                    new Item {Name = "My fav shoes", Type = "boots", PicUrl="/Content/photos/items/6.jpg",Description = "boots", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "Christinadoe@gmail.com")},
-                    new Item {Name = "My stilettos", Type = "dress",PicUrl="/Content/photos/items/7.jpg",  Description = "dangerous shoes", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "Christinadoe@gmail.com")},
-                    new Item {Name = "Red rain jacket", Type = "dress",PicUrl="/Content/photos/items/8.jpg",  Description = "", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
-                    new Item {Name = "Blue shirt", Type = "dress",PicUrl="/Content/photos/items/9.jpg",  Description = "casual fit", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
-                    new Item {Name = "Golden slippers", Type = "shoes",PicUrl="/Content/photos/items/10.jpg",  Description = "casual fit", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
-                    new Item {Name = "turntable", Type = "turntable",PicUrl="/Content/photos/items/11.jpg",  Description = "turn table", Size = "5", PriceList = 100, PriceLSale = 50, Person = people.Single(a => a.Email == "quangdly@gmail.com")}
+                    new Item {Name = "Purple", Type = "shoe", PicUrl="/Content/photos/items/1.jpg", Description = "high fashion", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "janedoe@gmail.com")},
+                    new Item {Name = "Cute Red", Type = "shoe", PicUrl="/Content/photos/items/2.jpg",Description = "my favorite", Size = "15", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "janedoe@gmail.com")},
+                    new Item {Name = "Red Pumps", Type = "pumps", PicUrl="/Content/photos/items/3.jpg",Description = "jaw droppers", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "jessicadoe@gmail.com")},
+                    new Item {Name = "Sexy Dress", Type = "sneakers",PicUrl="/Content/photos/items/4.jpg", Description = "late night comfort", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "jessicadoe@gmail.com")},
+                    new Item {Name = "Striped Shirt", Type = "sneakers", PicUrl="/Content/photos/items/5.jpg",Description = "hiptser  ouitfit", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
+                    new Item {Name = "My fav shoes", Type = "boots", PicUrl="/Content/photos/items/6.jpg",Description = "boots", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "Christinadoe@gmail.com")},
+                    new Item {Name = "My stilettos", Type = "dress",PicUrl="/Content/photos/items/7.jpg",  Description = "dangerous shoes", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "Christinadoe@gmail.com")},
+                    new Item {Name = "Red rain jacket", Type = "dress",PicUrl="/Content/photos/items/8.jpg",  Description = "", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
+                    new Item {Name = "Blue shirt", Type = "dress",PicUrl="/Content/photos/items/9.jpg",  Description = "casual fit", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
+                    new Item {Name = "Golden slippers", Type = "shoes",PicUrl="/Content/photos/items/10.jpg",  Description = "casual fit", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
+                    new Item {Name = "turntable", Type = "turntable",PicUrl="/Content/photos/items/11.jpg",  Description = "turn table", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "quangdly@gmail.com")}
                 };
 
             items.ForEach(a => context.Items.Add(a));

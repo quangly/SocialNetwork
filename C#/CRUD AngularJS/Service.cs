@@ -34,7 +34,7 @@ namespace AngularJS_WebApi_EF
                              Id = y.Id,
                              Name = y.Name,
                              PriceList = y.PriceList,
-                             PriceLSale = y.PriceLSale,
+                             PriceLSale = y.PriceSale,
                              Size = y.Size,
                              Type = y.Size,
                              PicUrl = y.PicUrl

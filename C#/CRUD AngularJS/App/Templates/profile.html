@@ -12,6 +12,8 @@
         <div ng-repeat="item in person.items">
             <img ng-src="{{item.picUrl}}"  height="250" width="250" /><br/> Item Name: {{item.name}}
             <br />
+            Price: List ${{item.priceList}}, Sale ${{item.priceSale}}, Size: {{item.size}}
+            <br />
             Description: {{item.description}}<p />
             <input type="text" id ="txtComment" size="25" ng-model="commentText"/> <button type="button" class="btn btn-default btn-xs" ng-click="addComment(item.id, commentText, 'deltadreams')">Submit</button><br/>
             <div ng-repeat="comment in item.comments">
