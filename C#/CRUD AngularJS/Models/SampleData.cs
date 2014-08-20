@@ -56,8 +56,6 @@ namespace AngularJS_WebApi_EF.Models
                     new Item {Name = "Blue shirt", Type = "dress",PicUrl="/Content/photos/items/placehold.gif",  Description = "casual fit", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
                     new Item {Name = "Golden slippers", Type = "shoes",PicUrl="/Content/photos/items/placehold.gif",  Description = "casual fit", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "amydoe@gmail.com")},
                     new Item {Name = "turntable", Type = "turntable",PicUrl="/Content/photos/items/placehold.gif",  Description = "turn table", Size = "5", PriceList = 100, PriceSale = 50, Person = people.Single(a => a.Email == "quangdly@gmail.com")}
-
-                
                 };
 
             items.ForEach(a => context.Items.Add(a));
