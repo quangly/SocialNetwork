@@ -51,6 +51,12 @@ namespace AngularJS_WebApi_EF
                 defaults: new { controller = "Person", action = "Register" },
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
                 );
+            config.Routes.MapHttpRoute(
+                name: "api-fileupload",
+                routeTemplate: "api/files/upload",
+                defaults: new { controller = "Files", action = "Upload" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+                );
 
         }
     }

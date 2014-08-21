@@ -138,6 +138,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Global.asax.cs">
@@ -152,10 +153,12 @@
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\SampleData.cs" />
+    <Compile Include="Models\UploadDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\scripts\upload.js" />
     <Content Include="App\Templates\home.html" />
     <Content Include="App\Templates\register.html" />
     <Content Include="App\Templates\profile.html" />
@@ -251,6 +254,8 @@
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\vendor\angular-file-upload-shim.js" />
+    <Content Include="Scripts\vendor\angular-file-upload.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-mocks.js" />

@@ -14,6 +14,7 @@ namespace AngularJS_WebApi_EF.Models
         public string email{ get; set; }
         public string location { get; set; }
         public string picUrl { get; set; }
+        public byte[] image { get; set; }
 
     }
 }
