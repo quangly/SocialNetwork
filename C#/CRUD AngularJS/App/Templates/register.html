@@ -1,0 +1,22 @@
+﻿<div style="float: left; margin-left: 20px;">
+
+    <div style="float: left; margin-left: 10px;">
+        
+        Username  <input type="text" id="txtUserName" size="25" ng-model="userName"/>{{userName}} 
+        <p></p>
+        Name <input type="text" id="txtName" size="25" ng-model="name"/>{{name}} 
+        <p></p>
+        Email <input type="text" id="txtEmail" size="25" ng-model="email"/>{{email}} 
+        <p></p>
+        Location <input type="text" id="txtLocation" size="25" ng-model="location"/>{{location}} 
+        <p></p>
+        Pic URL <input type="text" id="txtPicUrl" size="25" ng-model="picUrl"/>{{pickUrl}} 
+        <div ng-controller="UploadCtrl">
+            <input type="file" ng-file-select="onFileSelect($files)" multiple>
+        </div>
+        <p></p>
+        <button type="button" class="btn btn-default" ng-click="registerSubmit(userName, name, email, location, picUrl)">Submit</button>
+
+    </div>
+    
+</div>

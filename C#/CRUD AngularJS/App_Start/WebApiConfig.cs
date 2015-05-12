@@ -31,6 +31,33 @@ namespace AngularJS_WebApi_EF
                 constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
                 );
 
+            config.Routes.MapHttpRoute(
+                name: "api-search",
+                routeTemplate: "api/people/search",
+                defaults: new { controller = "Person", action = "Search" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
+                );
+
+            config.Routes.MapHttpRoute(
+                name: "api-comment",
+                routeTemplate: "api/people/comment",
+                defaults: new { controller = "Person", action = "PostComment" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+                );
+
+            config.Routes.MapHttpRoute(
+                name: "api-register",
+                routeTemplate: "api/people/register",
+                defaults: new { controller = "Person", action = "Register" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+                );
+            config.Routes.MapHttpRoute(
+                name: "api-fileupload",
+                routeTemplate: "api/files/upload",
+                defaults: new { controller = "Files", action = "Upload" },
+                constraints: new { httpMethod = new HttpMethodConstraint(HttpMethod.Post) }
+                );
+
         }
     }
 }

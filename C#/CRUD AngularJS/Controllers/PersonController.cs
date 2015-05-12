@@ -15,52 +15,55 @@ namespace AngularJS_WebApi_EF.Controllers
     public class PersonController : ApiController
     {
         private PersonContext db = new PersonContext();
+        private Service svc = new Service();
 
         [HttpGet]
         public IEnumerable<Object> GetPeople()
         {
-            var comments = db.Comments.ToList();
-            return db.People.Include(x => x.Items).OrderBy(x => x.Name).ToList()
-                     .Select(x => new
-                         {
-                             Email = x.Email,
-                             Id = x.Id,
-                             Location = x.Location,
-                             Name = x.Name,
-                             UserName = x.UserName,
-                             PicUrl = x.PicUrl,
-                             Items = x.Items.Select(y => new
-                                 {
-                                     Comments = comments.Where(z => z.Item == y).Select(z => new
-                                         {
-                                             CommentText = z.CommentText,
-                                             Name = z.Person.Name
-                                         }).ToList().Take(1),
-                                     Description = y.Description,
-                                     Id = y.Id,
-                                     Name = y.Name,
-                                     PriceList = y.PriceList,
-                                     PriceLSale = y.PriceLSale,
-                                     Size = y.Size,
-                                     Type = y.Size,
-                                     PicUrl = y.PicUrl
-                                 }).ToList()//.Take(1)
-                         }).AsEnumerable();
+            var obj = svc.GetPeople();
+            return obj;
+
+
         }
 
         [HttpGet]
         public object GetUser(string username)
         {
-            var person =
-                GetPeople().FirstOrDefault(x => x.GetType().GetProperty("UserName").GetValue(x, null).ToString() == username);
+            var person = svc.GetUser(username);
+            return person;            
+        }
+
+        [HttpGet]
+        public object Search(string username)
+        {
+
+            var person = svc.Search(username);
             if (person == null)
             {
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
 
-            return person;            
+            return person;
         }
 
+
+        [HttpPost]
+        public object PostComment(CommentPost commentPost)
+        {
+            var message = svc.PostComment(commentPost);
+            return message;
+
+        }
+
+        [HttpPost]
+        public object Register(Register register)
+        {
+            var message = svc.Register(register);
+            return message;
+
+        }
+
+        
         // GET api/Person/5
         public Person GetPerson(int id)
         {
