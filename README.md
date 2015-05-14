@@ -1,4 +1,4 @@
-# SocialNetwork
+# SocialNetwork Prototype
 AngularJS / .NET WebAPI Code First Responsive Design Social Network Prototype
 
 I am looking for contributors to this open source social networking project. 
