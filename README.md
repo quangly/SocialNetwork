@@ -10,3 +10,5 @@ Requirements
 - Sql Server
 - Entity Framework
 
+![alt tag](https://github.com/deltadreams/SocialNetwork/blob/dev/C%23/CRUD%20AngularJS/Content/screenshots/capture1.png)
+![alt tag](https://github.com/deltadreams/SocialNetwork/blob/dev/C%23/CRUD%20AngularJS/Content/screenshots/capture2.png)
